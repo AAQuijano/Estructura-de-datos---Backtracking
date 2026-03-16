@@ -9,6 +9,7 @@
 #define MAX 500
 
 using namespace std;
+
 struct vertice{
  string name;//nombre del vertice o nodo
  struct vertice *sig;
@@ -43,16 +44,16 @@ void mostrar_aristas();
 void matriz();
 
 
-void CrearMatriz(); //función para crear nuestra matriz adyacente.
+void CrearMatriz(); //funciï¿½n para crear nuestra matriz adyacente.
 void CrearMatrizKm();
-void mostrarmatriz();//función para mostrar nuestra matriz.
-int CantidadVertices();//función para contar nuestros vertices o nodos.
+void mostrarmatriz();//funciï¿½n para mostrar nuestra matriz.
+int CantidadVertices();//funciï¿½n para contar nuestros vertices o nodos.
 float ExisteArcoKm(string i,string f);
-float ExisteArco(string i,string f);//función para  verificar si nuestro grafo tiene arcos
+float ExisteArco(string i,string f);//funciï¿½n para  verificar si nuestro grafo tiene arcos
 float BuscarAdy(Tnodo aux,string word);
 float BuscarAdyKm(Tnodo aux,string word);
 Tarista SeeAdy(Tnodo aux,string word);
-Tnodo Buscarv(string valor); //función para buscar.
+Tnodo Buscarv(string valor); //funciï¿½n para buscar.
 void mostrarmatrizKm();
 void mostrarmatriz();
 void menu2();
@@ -1138,7 +1139,7 @@ return;
  aux=aux->sig;
  }
 }
-Tarista SeeAdy(Tnodo aux,string word){ //función booleana para poder realizar la matriz adyacente
+Tarista SeeAdy(Tnodo aux,string word){ //funciï¿½n booleana para poder realizar la matriz adyacente
      Tarista temp=aux->arco; //creamos un nuevo puntero.
      Tarista a = NULL;  //creamos un varible de tipo boolena.
      while(temp != NULL){ //ciclo while o mientras.
@@ -1149,7 +1150,7 @@ Tarista SeeAdy(Tnodo aux,string word){ //función booleana para poder realizar la
 	 return a;// sino retornamos a falso
 }
 
-int CantidadVertices(){ //función para contar nuestro vertices o nodos
+int CantidadVertices(){ //funciï¿½n para contar nuestro vertices o nodos
     Tnodo nodo=p; //creamos un nuevo nodo y lo igualamos a otro.
     int i=0;//creamo una nueva variable entera y la igualamos a 0
     while(nodo!=NULL){//ciclo mientras, si nuestro nodo es distinto de NULL
@@ -1159,7 +1160,7 @@ int CantidadVertices(){ //función para contar nuestro vertices o nodos
     return i; //retornamos i.
 }
 
-Tnodo Buscarv(string valor){ //función para buscar valores dentro de nuestro grafo
+Tnodo Buscarv(string valor){ //funciï¿½n para buscar valores dentro de nuestro grafo
 
 	Tnodo indice,n=NULL; //creamos un nuevo nodo e igualamos a la varible n a NULL
 	indice=p; //igualamos nuestro
@@ -1172,7 +1173,7 @@ Tnodo Buscarv(string valor){ //función para buscar valores dentro de nuestro gra
     cout<<"\n\n\tEL VALOR BUSCADO NO ESTA EN EL GRAFO";
  return n; // si el valor buscado no esta en la lista retorna nulo
 }
-float BuscarAdyKm(Tnodo aux,string word){ //función booleana para poder realizar la matriz adyacente
+float BuscarAdyKm(Tnodo aux,string word){ //funciï¿½n booleana para poder realizar la matriz adyacente
      Tarista temp=aux->arco; //creamos un nuevo puntero.
      float a;  //creamos un varible de tipo boolena.
      while(temp != NULL){ //ciclo while o mientras.
@@ -1183,7 +1184,7 @@ float BuscarAdyKm(Tnodo aux,string word){ //función booleana para poder realizar
 	 return a=0;// sino retornamos a falso
 }
 
-float BuscarAdy(Tnodo aux,string word){ //función booleana para poder realizar la matriz adyacente
+float BuscarAdy(Tnodo aux,string word){ //funciï¿½n booleana para poder realizar la matriz adyacente
      Tarista temp=aux->arco; //creamos un nuevo puntero.
      float a;  //creamos un varible de tipo boolena.
      while(temp != NULL){ //ciclo while o mientras.
@@ -1194,12 +1195,12 @@ float BuscarAdy(Tnodo aux,string word){ //función booleana para poder realizar l
 	 return a=0;// sino retornamos a falso
 }
 
-float ExisteArcoKm(string i,string f){//función para poder realizar la matriz adyacente
+float ExisteArcoKm(string i,string f){//funciï¿½n para poder realizar la matriz adyacente
   Tnodo nodo; //creamos un nuevo nodo.
   float a;//creamos una variable entera, y la inicializamos en 1
-    nodo=Buscarv(i);//igualamos nuestro nodo a la función buscar.
+    nodo=Buscarv(i);//igualamos nuestro nodo a la funciï¿½n buscar.
     if(nodo != NULL){ //sentencia if, utilizando el nodo creado.
-         if(BuscarAdyKm(nodo,f) != 0){ //sentencia if, llamamos a nuestra función booleana.
+         if(BuscarAdyKm(nodo,f) != 0){ //sentencia if, llamamos a nuestra funciï¿½n booleana.
 		 return a = BuscarAdyKm(nodo,f); //retornamos a
 		 }else{
 		 return a=0; //retornamos a
@@ -1207,12 +1208,12 @@ float ExisteArcoKm(string i,string f){//función para poder realizar la matriz ad
     }
 }
 
-float ExisteArco(string i,string f){//función para poder realizar la matriz adyacente
+float ExisteArco(string i,string f){//funciï¿½n para poder realizar la matriz adyacente
   Tnodo nodo; //creamos un nuevo nodo.
   float a;//creamos una variable entera, y la inicializamos en 1
-    nodo=Buscarv(i);//igualamos nuestro nodo a la función buscar.
+    nodo=Buscarv(i);//igualamos nuestro nodo a la funciï¿½n buscar.
     if(nodo != NULL){ //sentencia if, utilizando el nodo creado.
-         if(BuscarAdy(nodo,f) != 0){ //sentencia if, llamamos a nuestra función booleana.
+         if(BuscarAdy(nodo,f) != 0){ //sentencia if, llamamos a nuestra funciï¿½n booleana.
 		 return a = BuscarAdy(nodo,f); //retornamos a
 		 }else{
 		 return a=0; //retornamos a
@@ -1220,14 +1221,14 @@ float ExisteArco(string i,string f){//función para poder realizar la matriz adya
     }
 }
 
-void CrearMatriz(){ //función para crear nuestra matriz adyacente.
+void CrearMatriz(){ //funciï¿½n para crear nuestra matriz adyacente.
      Tnodo nodo=p,nodotemp; //creamos un nuevo puntero y lo igualamos.
      int i,j,inicio,fin; //creamos nuestras variables enteras.
-     int cant=CantidadVertices(); //creamos un varibale entera y la igualamos a nuestra función cantidad de vertices.
+     int cant=CantidadVertices(); //creamos un varibale entera y la igualamos a nuestra funciï¿½n cantidad de vertices.
      for(i=0;i<cant;i++){ //ciclo for
          nodotemp=p;//igualamos nuestros punteros.
        for(j=0;j<cant;j++){//ciclos for
-       //guardamos en la matriz creada anteriormente los datos de nuestra función existe arco.
+       //guardamos en la matriz creada anteriormente los datos de nuestra funciï¿½n existe arco.
          MatrizAdyacente[i][j]=ExisteArco(nodo->name,nodotemp->name);
          nodotemp=nodotemp->sig; //igualamos nuestros punteros para que verifiquen todos los datos.
        }
@@ -1237,14 +1238,14 @@ void CrearMatriz(){ //función para crear nuestra matriz adyacente.
      delete nodotemp;  //eliminamos nodotemp al terminar los ciclos for.
 }
 
-void CrearMatrizKm(){ //función para crear nuestra matriz adyacente.
+void CrearMatrizKm(){ //funciï¿½n para crear nuestra matriz adyacente.
      Tnodo nodo=p,nodotemp; //creamos un nuevo puntero y lo igualamos.
      int i,j,inicio,fin; //creamos nuestras variables enteras.
-     int cant=CantidadVertices(); //creamos un varibale entera y la igualamos a nuestra función cantidad de vertices.
+     int cant=CantidadVertices(); //creamos un varibale entera y la igualamos a nuestra funciï¿½n cantidad de vertices.
      for(i=0;i<cant;i++){ //ciclo for
          nodotemp=p;//igualamos nuestros punteros.
        for(j=0;j<cant;j++){//ciclos for
-       //guardamos en la matriz creada anteriormente los datos de nuestra función existe arco.
+       //guardamos en la matriz creada anteriormente los datos de nuestra funciï¿½n existe arco.
          MatrizKm[i][j]=ExisteArcoKm(nodo->name,nodotemp->name);
          nodotemp=nodotemp->sig; //igualamos nuestros punteros para que verifiquen todos los datos.
        }
@@ -1255,7 +1256,7 @@ void CrearMatrizKm(){ //función para crear nuestra matriz adyacente.
 }
 
 
-void mostrarmatriz(){ //función para mostrar nuestra matriz adyacente.
+void mostrarmatriz(){ //funciï¿½n para mostrar nuestra matriz adyacente.
     int i,j,cant,a,b; //creamos varibales enteras
     Tnodo nodo=p; //creamos un nuevo puntero.
     cant=CantidadVertices(); //igulamos  la varibale creada anteriormente a la cantidad de vertices.
@@ -1284,7 +1285,7 @@ a = 0;
     }
 }
 
-void mostrarmatrizKm(){ //función para mostrar nuestra matriz adyacente.
+void mostrarmatrizKm(){ //funciï¿½n para mostrar nuestra matriz adyacente.
     int i,j,cant,a,b; //creamos varibales enteras
     Tnodo nodo=p; //creamos un nuevo puntero.
     cant=CantidadVertices(); //igulamos  la varibale creada anteriormente a la cantidad de vertices.
