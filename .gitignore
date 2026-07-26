@@ -1,3 +1,7 @@
 *.exe
 .vscode/
 *.log
+*.exe
+AGENTS.md
+Practice.md
+Enunciados/Proyecto3_Instrucciones.pdf

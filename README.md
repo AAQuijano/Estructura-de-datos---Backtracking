@@ -1,107 +1,78 @@
-# Estructura de Datos y Algoritmos - Práctica
+# Proyecto #3 — Estructura de Datos y Algoritmos
 
-Práctica de estructuras de datos y algoritmos en C++ y Python.
+## Objetivo
 
-## Estructuras de Datos
+Resolver los enunciados del [Proyecto3_Enunciados.pdf](Enunciados/Proyecto3_Enunciados.pdf) implementando un **grafo dirigido** de las provincias de Panamá con conexiones aéreas, en **C++** y **Python**.
 
-### Lineales
-- [ ] Listas enlazadas (simples, dobles, circulares)
-- [ ] Pilas (Stack)
-- [ ] Colas (Queue)
-- [ ] Listas doblemente enlazadas
+## Estructura del proyecto
 
-### No Lineales
-- [ ] Árboles binarios
-- [ ] Árboles binarios de búsqueda (BST)
-- [ ] Árboles AVL
-- [ ] Árboles B
-- [ ] Grafos (matriz de adyacencia, lista de adyacencia)
-- [ ] Montículos (Heap)
-- [ ] Tablas hash
+```
+Proyecto#3 - Estructura de datos/
+├── Enunciados/
+│   └── Proyecto3_Enunciados.pdf      # Enunciados a resolver
+├── cpp/
+│   ├── Old_version/
+│   │   └── Proyecto#3_Enunciado#1.cpp  # Enunciado #1 (monolítico)
+│   └── New_Version/                     # Refactorización en progreso
+│       ├── Red.h                        # Clase Grafo
+│       ├── Datos.h                      # Datos de provincias
+│       └── Problema1.cpp                # Programa principal
+├── python/
+│   └── main.py                          # Esqueleto inicial
+├── .gitignore
+└── README.md
+```
 
-### Otras
-- [ ] Conjuntos (Set)
-- [ ] Mapas/Diccionarios
-- [ ] Colas de prioridad
+## Estado del proyecto
 
-## Algoritmos
+| Enunciado | C++                          | Python       |
+| --------- | ---------------------------- | ------------ |
+| #1        | ❌ Pendiente                 | ❌ Pendiente |
+| #2         | ❌ Pendiente                | ❌ Pendiente |
 
-### Ordenamiento
-- [ ] Burbuja (Bubble Sort)
-- [ ] Inserción (Insertion Sort)
-- [ ] Selección (Selection Sort)
-- [ ] Quick Sort
-- [ ] Merge Sort
-- [ ] Heap Sort
-- [ ] Counting Sort
-- [ ] Radix Sort
+## Implementación actual (C++)
 
-### Búsqueda
-- [ ] Búsqueda lineal
-- [ ] Búsqueda binaria
-- [ ] Búsqueda en profundidad (DFS)
-- [ ] Búsqueda en anchura (BFS)
+Solo existe una versión inicial del **Enunciado #1**:
 
-### Grafos
-- [ ] Recorrido en profundidad (DFS)
-- [ ] Recorrido en anchura (BFS)
-- [ ] Dijkstra
-- [ ] Bellman-Ford
-- [ ] Floyd-Warshall
-- [ ] Árbol mínimo expandido (Prim, Kruskal)
+- **Monolítica** (`Old_version/Proyecto#3_Enunciado#1.cpp`) — 1330 líneas en un solo archivo, con menú interactivo, lista de adyacencia, matrices de costo/distancia, DFS y backtracking para búsqueda de rutas.
 
-### Árboles
-- [ ] Inorden, preorden, postorden
-- [ ] Insertar, buscar, eliminar
-- [ ] Altura y equilibrio
+## Modelo de datos — Grafo de provincias
 
-### Dinámicos
-- [ ] Fibonacci (memoización)
-- [ ] Subsecuencia común más larga (LCS)
-- [ ] Mochila (Knapsack)
-- [ ] Cambio de monedas
+### Nodos (8 provincias)
 
-## Configuración del Entorno
+Panama, Herrera, Colon, Cocle, LosSantos, Chiriqui, Veraguas, BocasDelToro
 
-### C++ (Windows con MSYS2)
+### Aristas dirigidas (11 conexiones)
+
+| Origen → Destino     | Km     |
+| --------------------- | ------ |
+| Cocle → Veraguas     | 2414   |
+| Veraguas → LosSantos | 3218.6 |
+| Veraguas → Chiriqui  | 2414   |
+| Veraguas → Herrera   | 2414   |
+| LosSantos → Chiriqui | 3218.6 |
+| Panama → Colon       | 2414   |
+| Panama → Veraguas    | 3862.4 |
+| Panama → Cocle       | 2092.2 |
+| Colon → BocasDelToro | 3218.6 |
+| Colon → Cocle        | 1609.4 |
+| Colon → Chiriqui     | 3701.5 |
+
+Cada arista almacena distancia (km), tiempo (min) y costo.
+
+### Algoritmos
+
+- **DFS** — recorrido en profundidad
+- **Backtracking** — búsqueda de rutas origen→destino filtrando por km, tiempo o costo
+
+## Compilación (C++)
+
 ```bash
-# Compilar
-g++ archivo.cpp -o archivo
-
-# Ejecutar
-./archivo
+g++ Old_version/Proyecto#3_Enunciado#1.cpp -o enunciado1.exe
 ```
 
-**Problema común**: Si `g++` no se reconoce, agregar al PATH:
-```
-C:\msys64\ucrt64\bin
-```
+## Ejecución (Python)
 
-### Python
 ```bash
-python archivo.py
+python python/main.py
 ```
-
-## Ejemplo: Hola Mundo
-
-### C++
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Hola Mundo" << endl;
-    return 0;
-}
-```
-
-### Python
-```python
-print("Hola Mundo")
-```
-
-## Notas
-
-- Carpeta para C++: `cpp/`
-- Carpeta para Python: `python/`
-- Cada tema crear subcarpeta propia
